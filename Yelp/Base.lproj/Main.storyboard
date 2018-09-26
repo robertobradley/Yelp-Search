@@ -89,7 +89,7 @@
                                             <outlet property="categoriesLabel" destination="vbL-Jq-JzG" id="EV1-Bu-aL2"/>
                                             <outlet property="distanceLabel" destination="IAi-71-xGa" id="Bpb-OK-fOe"/>
                                             <outlet property="nameLabel" destination="E0I-Ms-so5" id="k5N-Nf-C88"/>
-                                            <outlet property="ratingImageView" destination="rqG-Lm-FhE" id="9bT-zE-cxV"/>
+                                            <outlet property="ratingImageView" destination="cYc-lO-Mbj" id="6Og-sq-BTO"/>
                                             <outlet property="reviewsCountLabel" destination="S9f-e6-BjW" id="YaU-tf-Ot5"/>
                                             <outlet property="thumbImageView" destination="rqG-Lm-FhE" id="VGq-an-cWr"/>
                                         </connections>

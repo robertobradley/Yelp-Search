@@ -24,7 +24,7 @@ class BusinessCell: UITableViewCell {
             categoriesLabel.text = business.categories
             addressLabel.text = business.address
             reviewsCountLabel.text = "\(business.reviewCount!) Reviews"
-            
+            ratingImageView.image = business.ratingImage
             distanceLabel.text = business.distance
             
         }
