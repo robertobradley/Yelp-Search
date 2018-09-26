@@ -8,13 +8,25 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate , UISearchBarDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     var businesses: [Business]!
+
+    lazy var searchBar:UISearchBar = UISearchBar()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchBar.searchBarStyle = UISearchBarStyle.prominent
+        searchBar.placeholder = "Search..."
+        searchBar.isTranslucent = false
+        searchBar.backgroundImage = UIImage()
+        searchBar.delegate = self as? UISearchBarDelegate
+        navigationItem.titleView = searchBar
+        searchBar = UISearchBar()
+        searchBar.sizeToFit()
+        
         tableView.delegate = self
         tableView.dataSource = self
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -63,6 +75,18 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         let cell = tableView.dequeueReusableCell(withIdentifier: "BusinessCell", for: indexPath) as! BusinessCell
         cell.business = businesses[indexPath.row]
         return cell
+    }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.endEditing(true)
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = true
+        
+    }
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
     }
     
     /*
