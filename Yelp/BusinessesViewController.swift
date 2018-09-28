@@ -9,12 +9,13 @@
 import UIKit
 
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate , UISearchBarDelegate{
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate , UISearchBarDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     var businesses: [Business]!
 
     lazy var searchBar:UISearchBar = UISearchBar()
+    var isMoreDataLoading = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -76,6 +77,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         cell.business = businesses[indexPath.row]
         return cell
     }
+    
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
